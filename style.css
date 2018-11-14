@@ -1,0 +1,69 @@
+/* Declaring Variables */
+
+
+/* Mixins here */
+@mixin flex{
+  display: $flex;
+  justify-content: $center;
+  align-items: $center;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #ED213A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  width: $width;
+  height: $height;
+  .wrapper{
+    @include flex;
+    width: $width;
+    height: $height;
+    .phone--case{
+      width: 200px;
+      height: 300px;
+      background: #fff;
+      border-radius: 20px;
+      transform: skewX(-5deg);
+      box-shadow: 0 3px 150px 5px #FFF;
+      position: relative;
+      @include flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      .strawbberie{
+        width: 100%;
+        height: 20vh;
+        background-image: url('http://www.pngmart.com/files/3/Strawberry-PNG-Transparent-Image.png'); 
+        background-position: center center;
+        background-size: cover;
+        @include flex;
+        h2{
+          font-size: 26px;
+          color: rgba(0,0,0,.7);
+          text-transform: uppercase;
+          
+        }
+      }
+      .text{
+        @include flex;
+        width: 100%;
+        height: 23vh;
+        background: #ED213A;
+        color: #fff;
+        text-shadow: 0 2px 3px #000;
+        p{
+          font-size: 10px;
+          padding: 20px;
+          text-align: justify;
+          font-family: Arial;
+        }
+      }
+    }
+  }
+}
